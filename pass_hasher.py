@@ -23,8 +23,7 @@ print(inow, "This script will hash the password and then verify if it's valid or
 print(inow, "The password verificationconsists of verifying a secret using an existing hash.")
 print(inow, "This checks if a secret matches against the one stored inside the specified hash.\n", rst)
  
-#call(["date"])
- 
+
 def pass_gen():
     """This script is asking the user to insert the plain password and
        then it uses that password to generate a hash/salt which can then
@@ -37,9 +36,7 @@ def pass_gen():
  
     for i in users:
         inow = d.datetime.now().strftime("%Y-%m-%d %H:%M:%S ")
-#        print(inow, "####################################")
         passin = get.getpass(inow + " Enter a password for "+ i+ ": ")
-#        print(passin)
         if len(passin) == 0:
             print(inow+red,"Error: Empty input. Skipping...", rst)
         elif len(passin) < 12:
