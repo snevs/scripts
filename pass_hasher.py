@@ -11,14 +11,10 @@ import signal
 import sys
 import re
  
-yel = "\x1b[1;33m"
-grn = "\x1b[1;32m"
-mgt = "\x1b[1;35m"
-red = "\x1b[1;31m"
-rst = "\x1b[0m"
+yel, grn, mgt, red, rst = "\x1b[1;33m", "\x1b[1;32m", "\x1b[1;35m", "\x1b[1;31m", "\x1b[0m"
 inow = d.datetime.now().strftime("%Y-%m-%d %H:%M:%S ")
  
-print(mgt+ inow, "This script is intended to generate salt hashed passwords for the Platinum accounts on the OASGs.")
+print(mgt+ inow, "This script is intended to generate salt hashed passwords for Linux machines.")
 print(inow, "This script will hash the password and then verify if it's valid or not.")
 print(inow, "The password verificationconsists of verifying a secret using an existing hash.")
 print(inow, "This checks if a secret matches against the one stored inside the specified hash.\n", rst)
@@ -27,7 +23,7 @@ print(inow, "This checks if a secret matches against the one stored inside the s
 def pass_gen():
     """This script is asking the user to insert the plain password and
        then it uses that password to generate a hash/salt which can then
-       be deployed using Ansible on all the Platinum Gateways via the password-change plan.
+       be deployed using Ansible on all the servers via the password-change plan.
        Used Passlib Python module and hash verification:
        https://pythonhosted.org/passlib/lib/passlib.ifc.html#passlib.ifc.PasswordHash.verify
     """
